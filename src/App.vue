@@ -9,6 +9,8 @@ import Header from "./components/Header.vue";
 </template>
 
 <style lang="postcss">
+@import url("./assets/reset.css");
+
 :root {
   --primary-font: "Playfair Display", baskerville, serif;
   --secondary-font: "Montserrat", helvetica, arial, sans-serif;
@@ -19,14 +21,16 @@ import Header from "./components/Header.vue";
 
 body {
   background-color: var(--background-color);
-}
-
-#app {
   font-family: var(--primary-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: var(--text-color);
-  margin-top: 60px;
+}
+
+.section__wrapper {
+  max-width: 1700px;
+  margin: auto;
+  padding-left: 2.632rem;
+  padding-right: 2.632rem;
 }
 </style>
