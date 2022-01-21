@@ -2,18 +2,23 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import Header from "./components/Header.vue";
+import CountDown from "./components/CountDown.vue"
+import Schedule from "./components/Schedule.vue"
 </script>
 
 <template>
   <Header />
+  <CountDown />
+  <Schedule />>
 </template>
 
 <style lang="postcss">
 @import url("./assets/reset.css");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Playfair+Display:wght@400;500;700&display=swap');
 
 :root {
-  --primary-font: "Playfair Display", baskerville, serif;
-  --secondary-font: "Montserrat", helvetica, arial, sans-serif;
+  --primary-font: "Playfair Display", arial, serif;
+  --secondary-font: "Montserrat", baskerville, arial, sans-serif;
   --primary-color: #274035;
   --text-color: #706e67;
   --background-color: #f3f2f1;
@@ -28,7 +33,7 @@ body {
 }
 
 .section__wrapper {
-  max-width: 1700px;
+  max-width: 1440px;
   margin: auto;
   padding-left: 2.632rem;
   padding-right: 2.632rem;

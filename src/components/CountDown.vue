@@ -1,0 +1,58 @@
+<script setup lang="ts"></script>
+
+<template>
+  <section class="section">
+    <div class="section__wrapper countdown">
+      <div class="countdown__item">
+        <div class="countdown__time">120</div>
+        <div class="countdown__label">días</div>
+      </div>
+      <div class="countdown__item">
+        <div class="countdown__time">23</div>
+        <div class="countdown__label">horas</div>
+      </div>
+      <div class="countdown__item">
+        <div class="countdown__time">12</div>
+        <div class="countdown__label">minutos</div>
+      </div>
+      <div class="countdown__item">
+        <div class="countdown__time">3</div>
+        <div class="countdown__label">segundos</div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<style scoped lang="postcss">
+
+.countdown {
+  display: flex;
+  margin-top: 46px;
+  margin-bottom: 46px;
+}
+.countdown__item {
+  flex: 0 1 25%;
+  text-align: center;
+}
+.countdown__time {
+  font-family: var(--primary-font);
+  font-size: 46px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--primary-color);
+}
+
+.countdown__label {
+  font-family: var(--secondary-font);
+  font-size: 26px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--text-color);
+}
+</style>
