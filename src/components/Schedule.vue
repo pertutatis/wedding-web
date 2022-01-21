@@ -1,26 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Card from "./Card.vue"
+</script>
 
 <template>
   <section class="section">
     <div class="section__wrapper schedule">
 
       <div class="schedule__column schedule__column--grid">
-        <div class="card">
-          <div class="card__title">Ceremonia</div>
-          <div class="card__text">12:30</div>
-        </div>
-        <div class="card">
-          <div class="card__title">cocktail</div>
-          <div class="card__text">13:30</div>
-        </div>
-        <div class="card">
-          <div class="card__title">Fiesta</div>
-          <div class="card__text">17:00</div>
-        </div>
-        <div class="card">
-          <div class="card__title">Resopón</div>
-          <div class="card__text">21:00</div>
-        </div>
+        <Card title="Ceremonia" text ="12:30" />
+        <Card title="cocktail" text ="13:30" />
+        <Card title="Fiesta" text ="17:00" />
+        <Card title="Resopón" text ="21:00" />
       </div>
 
       <div class="schedule__column">
