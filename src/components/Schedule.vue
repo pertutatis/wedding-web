@@ -25,6 +25,9 @@ import Card from "./Card.vue"
 <style scoped lang="postcss">
 
 .schedule {
+  margin-top: 46px;
+  margin-bottom: 46px;
+  
   @media (min-width: 768px) {
     display: flex;
   } 

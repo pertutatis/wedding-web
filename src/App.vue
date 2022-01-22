@@ -4,12 +4,16 @@
 import Header from "./components/Header.vue";
 import CountDown from "./components/CountDown.vue"
 import Schedule from "./components/Schedule.vue"
+import HowToArrive from "./components/HowToArrive.vue"
+import Contact from "./components/Contact.vue"
 </script>
 
 <template>
   <Header />
   <CountDown />
-  <Schedule />>
+  <Schedule />
+  <HowToArrive />
+  <Contact />
 </template>
 
 <style lang="postcss">
