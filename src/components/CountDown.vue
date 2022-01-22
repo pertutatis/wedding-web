@@ -36,23 +36,22 @@
 }
 .countdown__time {
   font-family: var(--primary-font);
-  font-size: 46px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
+  font-size: 24px;
   color: var(--primary-color);
+
+  @media (min-width: 768px) {
+    font-size: 46px;
+  }
 }
 
 .countdown__label {
   font-family: var(--secondary-font);
-  font-size: 26px;
+  font-size: 12px;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: var(--text-color);
+
+  @media (min-width: 768px) {
+    font-size: 26px;
+  }
 }
 </style>

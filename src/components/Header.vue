@@ -21,39 +21,46 @@
 }
 
 .header__title {
-  font-family: var(--primary-font);
-  font-size: 84px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: var(--primary-color);
-  margin-left: 16.667%;
-  z-index: 1;
   position: relative;
+  z-index: 1;
+  color: var(--primary-color);
+  font-family: var(--primary-font);
+  font-size: 42px;
+  font-weight: bold;
+
+  @media (min-width: 768px) {
+    margin-left: 16.667%;
+    font-size: 84px;
+  }
 }
 
 .header__subtitle {
-  font-family: var(--secondary-font);
-  font-size: 26px;
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: var(--text-color);
-  margin-left: 16.667%;
-  padding-left: 320px;
-  z-index: 1;
   position: relative;
+  z-index: 1;
+  font-family: var(--secondary-font);
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--text-color);
+
+  @media (min-width: 768px) {
+    margin-left: 16.667%;
+    padding-left: 320px;
+    font-size: 26px;
+  }
 }
 
 .header__image {
   position: absolute;
-  top: -100px;
-  left: 13.5%;
-  /* transform: translateY(-50%); */
+  top: 50%;
+  left: 50%;
   z-index: 0;
+  max-width: 40%;
+  transform: translate(-50%, -50%);
+
+  @media (min-width: 768px) {
+    top: -100px;
+    left: 13.5%;
+    /* transform: translateY(-50%); */
+  }
 }
 </style>

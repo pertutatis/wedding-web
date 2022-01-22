@@ -25,73 +25,54 @@ import Card from "./Card.vue"
 <style scoped lang="postcss">
 
 .schedule {
-  display: flex;
+  @media (min-width: 768px) {
+    display: flex;
+  } 
 }
 
 .schedule__column {
-  width: 50%;
-  padding: 0 16px;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 50%;
+    padding: 0 16px;
+  }
 }
 .schedule__column--grid {
-  width: 50%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  column-gap: 32px;
-  row-gap: 32px;
+  column-gap: 24px;
+  row-gap: 24px;
+  margin-bottom: 24px;
+
+  @media (min-width: 768px) {
+    column-gap: 32px;
+    row-gap: 32px;
+  }
 }
 
 .schedule__title {
   margin-bottom: 24px;
   font-family: var(--primary-font);
-  font-size: 28px;
+  font-size: 22px;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: var(--primary-color);
+
+  @media (min-width: 768px) {
+    font-size: 28px;
+  }
 }
 
 .schedule__text {
   font-family: var(--secondary-font);
-  font-size: 18px;
   font-weight: 300;
-  font-style: normal;
+  font-size: 16px;
   line-height: 1.44;
   color: var(--text-color);
-}
 
-.card {
-  height: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #fff;
-  text-align: center;
-}
-
-.card__title {
-  margin-bottom: 8px;
-  font-family: var(--primary-font);
-  font-size: 22px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: var(--primary-color);
-}
-
-.card__text {
-  font-family: var(--secondary-font);
-  font-size: 18px;
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
-  color: var(--text-color);
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
 }
 </style>
