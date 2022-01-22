@@ -18,6 +18,11 @@
 
 .header__container {
   position: relative;
+  text-align: center;
+
+    @media (min-width: 768px) {
+      text-align: left;
+    }
 }
 
 .header__title {
