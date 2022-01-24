@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Content from './Content.vue'
-import Card from "./Card.vue"
+import Content from '../ui/Content.vue'
+import Card from "../ui/Card.vue"
 </script>
 
 <template>

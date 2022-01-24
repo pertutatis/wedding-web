@@ -1,8 +1,15 @@
 <script setup lang="ts">
-defineProps<{ 
+interface Props {
   title: string,
-  text: string
-}>();
+  text: string,
+  linkUrl?: String | any,
+  linkText?: String
+}
+
+withDefaults(defineProps<Props>(), {
+  linkUrl: '#',
+})
+
 </script>
 
 <template>
@@ -12,7 +19,7 @@ defineProps<{
       <div class="content__column">
         <h4 class="content__title">{{ title }}</h4>
         <p class="content__text">{{ text }}</p>
-        <a class="content__link" href="#">Link</a>
+        <a v-if="linkText" class="content__link" :href="linkUrl">{{ linkText }}</a>
       </div>
 
       <div class="content__column">
