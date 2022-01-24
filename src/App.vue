@@ -43,7 +43,13 @@ body {
 .section__wrapper {
   max-width: 1440px;
   margin: auto;
-  padding-left: 2.632rem;
-  padding-right: 2.632rem;
+  padding-left: 24px;
+  padding-right: 24px;
+  
+
+  @media (min-width: 768px) {
+    padding-left: 2.632rem;
+    padding-right: 2.632rem;
+  }
 }
 </style>
