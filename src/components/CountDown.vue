@@ -1,8 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="section">
-    <div class="section__wrapper countdown">
+  <section class="section countdown">
+    <div class="section__wrapper countdown__wrapper">
       <div class="countdown__item">
         <div class="countdown__time">120</div>
         <div class="countdown__label">días</div>
@@ -26,10 +26,13 @@
 <style scoped lang="postcss">
 
 .countdown {
-  display: flex;
   margin-top: 46px;
   margin-bottom: 46px;
 }
+.countdown__wrapper {
+  display: flex;
+}
+
 .countdown__item {
   flex: 0 1 25%;
   text-align: center;

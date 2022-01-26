@@ -8,6 +8,7 @@ import HowToArrive from "./components/HowToArrive.vue"
 import Reservation from "./components/Reservation.vue"
 import Contact from "./components/Contact.vue"
 import Disclaimer from "./components/Disclaimer.vue"
+import Footer from "./components/Footer.vue"
 </script>
 
 <template>
@@ -18,6 +19,8 @@ import Disclaimer from "./components/Disclaimer.vue"
   <Reservation />
   <Contact />
   <Disclaimer />
+  <Footer />
+
 </template>
 
 <style lang="postcss">
@@ -38,6 +41,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--text-color);
+}
+
+.section {
+  margin-top: 46px;
+  margin-bottom: 46px;
 }
 
 .section__wrapper {

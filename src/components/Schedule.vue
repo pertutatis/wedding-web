@@ -7,10 +7,10 @@ import Card from "../ui/Card.vue"
     <div class="section__wrapper schedule">
 
       <div class="schedule__column schedule__column--grid">
-        <Card title="Ceremonia" text ="12:30" />
-        <Card title="cocktail" text ="13:30" />
-        <Card title="Fiesta" text ="17:00" />
-        <Card title="Resopón" text ="21:00" />
+        <Card :is-small="true" title="Ceremonia" text ="12:30" />
+        <Card :is-small="true" title="cocktail" text ="13:30" />
+        <Card :is-small="true" title="Fiesta" text ="17:00" />
+        <Card :is-small="true" title="Resopón" text ="21:00" />
       </div>
 
       <div class="schedule__column">
@@ -23,7 +23,6 @@ import Card from "../ui/Card.vue"
 </template>
 
 <style scoped lang="postcss">
-
 .schedule {
   margin-top: 46px;
   margin-bottom: 46px;
