@@ -29,6 +29,7 @@ import Card from "../ui/Card.vue"
   
   @media (min-width: 768px) {
     display: flex;
+    align-items: flex-start;
   } 
 }
 

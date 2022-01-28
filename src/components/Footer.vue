@@ -30,5 +30,10 @@
   font-weight: bold;
   text-align: center;
   color: #fff;
+
+  @media (min-width: 768px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 </style>

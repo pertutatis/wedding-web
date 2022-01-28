@@ -49,9 +49,14 @@
 
   @media (min-width: 768px) {
     margin-left: 16.667%;
-    padding-left: 320px;
+    padding-left: 50px;
     font-size: 26px;
   }
+
+  @media (min-width: 1024px) {
+    padding-left: 320px;
+  }
+
 }
 
 .header__image {
@@ -63,9 +68,15 @@
   transform: translate(-50%, -50%);
 
   @media (min-width: 768px) {
+    top: 50px;
+    left: 8%;
+    transform: translateY(-50%);
+  }
+
+  @media (min-width: 1024px) {
     top: -100px;
     left: 13.5%;
-    /* transform: translateY(-50%); */
+    transform: translateY(0%);
   }
 }
 </style>

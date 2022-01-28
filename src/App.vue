@@ -44,8 +44,18 @@ body {
 }
 
 .section {
-  margin-top: 46px;
-  margin-bottom: 46px;
+  margin-top: 48px;
+  margin-bottom: 48px;
+
+  @media (min-width: 768px) {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  @media (min-width: 1024px) {
+    margin-top: 104px;
+    margin-bottom: 104px;
+  }
 }
 
 .section__wrapper {
@@ -56,6 +66,11 @@ body {
   
 
   @media (min-width: 768px) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media (min-width: 1024px) {
     padding-left: 2.632rem;
     padding-right: 2.632rem;
   }
