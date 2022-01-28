@@ -15,8 +15,6 @@
 <style scoped lang="postcss">
 
 .content {
-  margin-top: 46px;
-  margin-bottom: 46px;
   text-align: center;
 }
 

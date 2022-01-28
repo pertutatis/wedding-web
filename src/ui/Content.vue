@@ -2,8 +2,8 @@
 interface Props {
   title: string,
   text: string,
-  linkUrl?: String | any,
-  linkText?: String
+  linkUrl?: string,
+  linkText?: string
 }
 
 withDefaults(defineProps<Props>(), {
@@ -33,9 +33,6 @@ withDefaults(defineProps<Props>(), {
 <style scoped lang="postcss">
 
 .content {
-  margin-top: 46px;
-  margin-bottom: 46px;
-  
   @media (min-width: 768px) {
     display: flex;
   } 

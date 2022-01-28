@@ -2,8 +2,8 @@
 </script>
 
 <template>
-  <footer class="section">
-    <div class="section__wrapper footer">
+  <footer class="section footer">
+    <div class="section__wrapper">
         <div class="footer__head" style="background-image: url(https://picsum.photos/id/112/1440/400)">
         <h5 class="footer__title">Gracias</h5>
       </div>
@@ -15,7 +15,7 @@
 <style scoped lang="postcss">
 
 .footer {
-  margin-top: 46px;
+  margin-bottom: 0;
 }
 
 .footer__head {

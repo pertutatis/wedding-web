@@ -2,8 +2,8 @@
 </script>
 
 <template>
-  <section class="section">
-    <div class="section__wrapper reservation">
+  <section class="section reservation">
+    <div class="section__wrapper reservation__wrapper">
       <div class="reservation__head" style="background-image: url(https://picsum.photos/id/112/1440/400)">
         <h3 class="reservation__title">Confirmar Asistencia</h3>
       </div>
@@ -13,10 +13,13 @@
 </template>
 
 <style scoped lang="postcss">
-
 .reservation {
+  margin-bottom: 0;
+}
+
+.reservation__wrapper {
   position: relative;
-  margin-top: 46px;
+  bottom: -50px;
   
   &:after {
     content: '';

@@ -24,11 +24,6 @@
 </template>
 
 <style scoped lang="postcss">
-
-.countdown {
-  margin-top: 46px;
-  margin-bottom: 46px;
-}
 .countdown__wrapper {
   display: flex;
 }
