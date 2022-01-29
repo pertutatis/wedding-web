@@ -1,8 +1,8 @@
 interface ICountdown {
-    dateEnd: string;
-    getCountdown(): ICountdownResponse;
-    formatNumber(number:number): string;
-    getMillisecondsDifference(dateEnd:string): number;
+    dateEnd: string
+    getCountdown(): ICountdownResponse
+    formatNumber(number:number): string
+    getMillisecondsDifference(dateEnd:string): number
 }
 
 interface ICountdownResponse {
@@ -19,12 +19,12 @@ export default class countdown implements ICountdown {
     }
 
     getCountdown () : ICountdownResponse {
-        const MILLISECONDS_DIFFERENCE:number = this.getMillisecondsDifference('2022-06-11')
+        const MILLISECONDS_DIFFERENCE:number = this.getMillisecondsDifference(this.dateEnd)
     
-        const innerDay:number = Math.round(MILLISECONDS_DIFFERENCE / 1000 / 60 / 60 / 24);
-        const hr:number = Math.round(MILLISECONDS_DIFFERENCE / 1000 / 60 / 60 % 24);
-        const min:number = Math.round(MILLISECONDS_DIFFERENCE / 1000 / 60 % 60);
-        const sec:number = Math.round(MILLISECONDS_DIFFERENCE / 1000 % 60);  
+        const innerDay:number = Math.round(MILLISECONDS_DIFFERENCE / 1000 / 60 / 60 / 24)
+        const hr:number = Math.round(MILLISECONDS_DIFFERENCE / 1000 / 60 / 60 % 24)
+        const min:number = Math.round(MILLISECONDS_DIFFERENCE / 1000 / 60 % 60)
+        const sec:number = Math.round(MILLISECONDS_DIFFERENCE / 1000 % 60)
     
         return {
             days: this.formatNumber(innerDay),
@@ -42,8 +42,8 @@ export default class countdown implements ICountdown {
     }
     
     getMillisecondsDifference(dateEnd:string) : number {
-        const COUNT_END:number = Date.parse(new Date(dateEnd).toString());
-        const NOW:number = Date.parse(new Date().toString());
-        return COUNT_END - NOW;
+        const COUNT_END:number = Date.parse(new Date(dateEnd).toString())
+        const NOW:number = Date.parse(new Date().toString())
+        return COUNT_END - NOW
     }
 }
