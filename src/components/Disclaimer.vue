@@ -16,6 +16,7 @@
 
 .content {
   text-align: center;
+  max-width: 960px;
 }
 
 .content__text {

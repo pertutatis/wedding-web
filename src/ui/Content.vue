@@ -19,7 +19,7 @@ withDefaults(defineProps<Props>(), {
       <div class="content__column">
         <h4 class="content__title">{{ title }}</h4>
         <p class="content__text">{{ text }}</p>
-        <a v-if="linkText" class="content__link" :href="linkUrl">{{ linkText }}</a>
+        <a v-if="linkText" class="content__link" :href="linkUrl" target="_blank">{{ linkText }}</a>
       </div>
 
       <div class="content__column">

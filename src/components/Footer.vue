@@ -4,7 +4,7 @@
 <template>
   <footer class="section footer">
     <div class="section__wrapper">
-        <div class="footer__head" style="background-image: url(https://picsum.photos/id/112/1440/400)">
+        <div class="footer__head">
         <h5 class="footer__title">Gracias</h5>
       </div>
 
@@ -19,11 +19,25 @@
 }
 
 .footer__head {
+  position: relative;
   padding: 48px;
+  background-image: url(../assets/bg.jpg);
   background-size: cover;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .4;
+  }
 }
 
 .footer__title {
+  position: relative;
   width: 100%;
   font-family: var(--primary-font);
   font-size: 34px;
@@ -32,8 +46,8 @@
   color: #fff;
 
   @media (min-width: 768px) {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 }
 </style>

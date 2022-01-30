@@ -14,8 +14,12 @@ import Card from "../ui/Card.vue"
       </div>
 
       <div class="schedule__column">
-        <h4 class="schedule__title">Let me introduce you this amazing wedding.</h4>
-        <p class="schedule__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets.</p>
+        <h4 class="schedule__title">Bienvenidos a nuesta boda, ¡por fin!</h4>
+        <p class="schedule__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore harum placeat incidunt dolore ab enim deserunt voluptates, itaque nobis. Necessitatibus repellendus tempora, delectus nam aliquid ipsum qui. Quisquam, sit harum.</p>
+        <p class="schedule__text">
+          Si quieres reservar una plaza no te olvides de hablar con nosotros para que lo tengamos en cuenta.
+          Puedes hacerlo por teléfono/whatsapp o a través de <a href="">este formulario</a>.
+        </p>
       </div>
       
     </div>
@@ -68,6 +72,7 @@ import Card from "../ui/Card.vue"
 }
 
 .schedule__text {
+  margin-bottom: 16px;
   font-family: var(--secondary-font);
   font-weight: 300;
   font-size: 16px;
@@ -76,6 +81,11 @@ import Card from "../ui/Card.vue"
 
   @media (min-width: 768px) {
     font-size: 18px;
+  }
+
+  a {
+    color: var(--primary-color);
+    text-decoration: underline;
   }
 }
 </style>
