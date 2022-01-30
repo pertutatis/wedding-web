@@ -5,7 +5,7 @@
     <div class="section__wrapper header__container">
       <img class="header__image" alt="wedding brand" src="../assets/leave.svg" />
       <h1 class="header__title">ANA / DIEGO</h1>
-      <h2 class="header__subtitle">Huerto Bonet · 11/06/2022 · 12:45</h2>
+      <h2 class="header__subtitle">Huerto Bonet · 11/06/2022 · 12:30</h2>
     </div>
   </section>
 </template>

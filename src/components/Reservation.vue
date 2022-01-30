@@ -5,7 +5,7 @@
   <section class="section reservation">
     <div class="section__wrapper reservation__wrapper">
       <div class="reservation__head" style="background-image: url(https://picsum.photos/id/112/1440/400)">
-        <h3 class="reservation__title">Confirmar Asistencia</h3>
+        <h3 class="reservation__title">¡Que no pare la fiesta!</h3>
       </div>
       <div class="reservation__form">
         <iframe id="JotFormIFrame-220224174899360" title="New Customer Registration Form" onload="window.parent.scrollTo(0,0)" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://form.jotform.com/220224174899360" frameborder="0" style=" min-width: 100%; height:539px; border:none;" scrolling="no" > </iframe>  
@@ -59,8 +59,8 @@
   color: #fff;
 
   @media (min-width: 768px) {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 56px;
+    padding-bottom: 56px;
   }
 }
 </style>
