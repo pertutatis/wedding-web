@@ -9,10 +9,14 @@ import Content from '../ui/Content.vue'
     linkUrl="https://goo.gl/maps/m8q8pZCd7A7xqw848"
     linkText="Ver en google maps."
   >
-    <img src="../assets/map-provisional.png" alt="Como llegar">
+    <img class="map__image" src="../assets/mapa.png" alt="Como llegar">
   </Content>
 </template>
 
 <style scoped lang="postcss">
-
+.map__image {
+  @media (min-width: 1100px) {
+    margin-top: -80px;
+  }
+}
 </style>
