@@ -87,7 +87,7 @@
 .reservation__text {
   max-width: 752px;
   margin: 0 auto 8px;
-  padding: 24px 38px 0;
+  padding-top: 24px;
   font-family: var(--secondary-font);
   font-weight: 300;
   font-size: 16px;
@@ -95,6 +95,8 @@
   color: var(--text-color);
 
   @media (min-width: 768px) {
+    padding-left: 38px;
+    padding-right: 38px;
     font-size: 18px;
   }
 }
