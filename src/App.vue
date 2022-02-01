@@ -16,7 +16,7 @@ import Footer from "./components/Footer.vue"
   <CountDown />
   <Schedule />
   <HowToArrive />
-  <Reservation />
+  <!-- <Reservation /> -->
   <Contact />
   <Disclaimer />
   <Footer />
