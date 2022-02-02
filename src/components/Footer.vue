@@ -22,6 +22,7 @@
   position: relative;
   padding: 48px;
   background-image: url(../assets/bg.jpg);
+  background-image: url(../assets/bg.webp);
   background-size: cover;
 
   &:before {

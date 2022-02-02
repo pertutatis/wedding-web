@@ -9,7 +9,7 @@ import Content from '../ui/Content.vue'
     linkUrl="https://goo.gl/maps/m8q8pZCd7A7xqw848"
     linkText="Ver en google maps."
   >
-    <img class="map__image" src="../assets/mapa.png" alt="Como llegar">
+    <img class="map__image" src="../assets/mapa.webp" alt="Como llegar">
   </Content>
 </template>
 
