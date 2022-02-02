@@ -1,4 +1,10 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
+import loadIframe from '../utils/iframeLoader'
+
+onMounted(() => {
+  loadIframe()
+})
 </script>
 
 <template>
