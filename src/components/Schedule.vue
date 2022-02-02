@@ -14,11 +14,11 @@ import Card from "../ui/Card.vue"
       </div>
 
       <div class="schedule__column">
-        <h4 class="schedule__title">Bienvenidos a nuesta boda, ¡por fin!</h4>
+        <h3 class="schedule__title">Bienvenidos a nuesta boda, ¡por fin!</h3>
         <p class="schedule__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore harum placeat incidunt dolore ab enim deserunt voluptates, itaque nobis. Necessitatibus repellendus tempora, delectus nam aliquid ipsum qui. Quisquam, sit harum.</p>
         <p class="schedule__text">
           Si quieres reservar una plaza no te olvides de hablar con nosotros para que lo tengamos en cuenta.
-          Puedes hacerlo por teléfono/whatsapp o a través de <a href="">este formulario</a>.
+          Puedes hacerlo por teléfono/whatsapp o a través de <a href="/about">este formulario</a>.
         </p>
       </div>
       

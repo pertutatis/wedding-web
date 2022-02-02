@@ -15,6 +15,11 @@ import Content from '../ui/Content.vue'
 
 <style scoped lang="postcss">
 .map__image {
+  max-width: 100%;
+  display: block;
+  width: auto;
+  height: auto;
+
   @media (min-width: 1100px) {
     margin-top: -80px;
   }
