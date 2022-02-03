@@ -26,7 +26,7 @@ withDefaults(defineProps<Props>(), {
   justify-content: center;
   background-color: #fff;
   text-align: center;
-  background-image: url(../assets/leave.svg);
+  background-image: url(../assets/leaf.svg);
   background-size: 200px auto;
   background-repeat: no-repeat;
   background-position: 10% 50%;
