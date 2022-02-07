@@ -39,8 +39,10 @@ export const HTTP = (url:string, body:string, method:string) => {
     });
   })
   .then(stream => {
+    console.log({stream, resp: new Response(stream, { headers: { "Content-Type": "text/html" } })});
+    
     // Respond with our stream
-    return new Response(stream, { headers: { "Content-Type": "text/html" } }).json();
+    return new Response(stream, { headers: { "Content-Type": "text/html" } });
   })
   .then(result => {
     // Do things with result

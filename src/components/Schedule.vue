@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import Card from "../ui/Card.vue"
-// import BusForm from './BusForm.vue'
+import BusForm from './BusForm.vue'
 
 let popupIsOpened = ref<boolean>(false)
 </script>
@@ -29,10 +29,10 @@ let popupIsOpened = ref<boolean>(false)
     </div>
   </section>
 
-  <!-- <BusForm
+  <BusForm
     v-show="popupIsOpened"
     @close="popupIsOpened = false"
-  /> -->
+  />
 </template>
 
 <style scoped lang="postcss">
