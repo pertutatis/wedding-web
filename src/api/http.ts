@@ -5,9 +5,13 @@ export const HTTP = (url:string, body:string, method:string) => {
     body
   })
   .then(response => {
+    console.log({response1: response});
+    
     return response.body
   })
   .then(rb => {
+    console.log({rb});
+    
     if (rb == null) return rb
     
     const reader = rb.getReader();
