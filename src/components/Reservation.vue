@@ -1,9 +1,17 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { sendForm } from '../api/sendFrom';
 
 
 let name = ref<string>('')
 let comment = ref<string>('')
+
+function handleSubmit () {
+  sendForm({
+    name: name.value,
+    comment: comment.value
+  })
+}
 </script>
 
 <template>
@@ -25,6 +33,7 @@ let comment = ref<string>('')
           method="post"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
+          @submit.prevent="handleSubmit"
         >
           <input type="hidden" name="form-name" value="ask-song" />
           <label>
