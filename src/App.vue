@@ -33,6 +33,7 @@ import Footer from "./components/Footer.vue"
   --primary-color: #274035;
   --text-color: #706e67;
   --background-color: #f3f2f1;
+  --error-color: #b13b3b;
 }
 
 body {

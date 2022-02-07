@@ -2,28 +2,31 @@
 import { ref } from 'vue'
 import { sendForm } from '../api/sendFrom';
 
+type TFormStatus = 'active' | 'error' | 'success'
+
 let name = ref<string>('')
 let comment = ref<string>('')
+let formStatus = ref<TFormStatus>('active')
 
 function handleSubmit () {
   sendForm({
     'form-name': 'ask-song',
-      'name': name.value,
-      'comment': comment.value
-    })
-    .then((response) => console.log("/thank-you/", response))
-    .catch((error) => console.log(error));
+    'name': name.value,
+    'comment': comment.value
+  })
+  .then(() => formStatus.value = 'success')
+  .catch(() => formStatus.value = 'error')
 }
 </script>
 
 <template>
-  <section class="section reservation">
-    <div class="section__wrapper reservation__wrapper">
-      <div class="reservation__head">
-        <h3 class="reservation__title">¡Que no pare la fiesta!</h3>
+  <section class="section form">
+    <div class="section__wrapper form__wrapper">
+      <div class="form__head">
+        <h3 class="form__title">¡Que no pare la fiesta!</h3>
       </div>
-      <div class="reservation__form">
-        <p class="reservation__text">
+      <div class="form__form">
+        <p class="form__text">
           ¿Crees que hay alguna canción que no puede faltar y que tenemos que tenerla en
           cuenta si o si? ¿No concibes una boda sin paquito el chocolatero? ¿hay un temazo
           que nos quieres dedicar? No hay, problema, lo tendremos en cuenta, solo dinoslo.
@@ -31,6 +34,7 @@ function handleSubmit () {
         </p>
 
         <form
+          v-if="formStatus == 'active'"
           name="ask-song"
           method="post"
           data-netlify="true"
@@ -40,16 +44,19 @@ function handleSubmit () {
           <input type="hidden" name="form-name" value="ask-song" />
           <label>
             Dinos quien eres *
-            <input type="text" v-model="name" name="name" />
+            <input type="text" v-model="name" name="name" required/>
           </label>
 
           <label>
-            ¿Qué canción no puede faltar?
-            <textarea cols="30" rows="5" v-model="comment" name="comment"></textarea>
+            ¿Qué canción no puede faltar? *
+            <textarea cols="30" rows="5" v-model="comment" name="comment" required></textarea>
           </label>
 
           <input type="submit" value="Enviar" />
         </form>
+
+        <div class="form__response" v-if="formStatus == 'success'">Gracias por la sugerencia de canción {{ name }}. Nos guardamos la sugerencia de canción. Quien sabe si la pondremos y quien sabe si te tocará bailar con nosotros...</div>
+        <div class="form__response form__response--error" v-if="formStatus == 'error'">Vaya, actualmente el formulario no está funcionando, mejor contactanos por whatsapp.</div>
 
       </div>
     </div>
@@ -57,11 +64,11 @@ function handleSubmit () {
 </template>
 
 <style scoped lang="postcss">
-.reservation__wrapper {
+.form__wrapper {
   position: relative;
 }
 
-.reservation__head {
+.form__head {
   position: relative;
   padding: 24px;
   background-image: url(../assets/bg.jpg);
@@ -84,7 +91,7 @@ function handleSubmit () {
   }
 }
 
-.reservation__form {
+.form__form {
   position: relative;
   z-index: 2;
   background-color: var(--background-color);
@@ -97,7 +104,7 @@ function handleSubmit () {
   }
 }
 
-.reservation__title {
+.form__title {
   position: relative;
   width: 100%;
   font-family: var(--primary-font);
@@ -112,7 +119,7 @@ function handleSubmit () {
   }
 }
 
-.reservation__text {
+.form__text {
   margin-bottom: 24px;
   padding-top: 24px;
   font-family: var(--secondary-font);
@@ -124,6 +131,22 @@ function handleSubmit () {
   @media (min-width: 768px) {
     font-size: 18px;
   }
+}
+
+.form__response {
+  font-family: var(--primary-font);
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--primary-color);
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+  }
+}
+
+.form__response--error {
+  color: var(--error-color);
 }
 
 label {
