@@ -1,16 +1,33 @@
 import { HTTP } from './http'
 
-interface IFormData {
+interface IObjectKeys {
+  [key: string]: string ;
+}
+
+interface IFormData extends IObjectKeys {
   name: string
   comment: string
 }
 
 export const sendForm = (formData:IFormData) => {
-  return HTTP('/', formData)
+  const data:string = encode(formData)
+
+  return HTTP('/', data)
     .then(result => {
       console.log(result);
       
     })
     .catch(err => { throw err })
 
+}
+
+function encode (data:IFormData) {
+  return Object.keys(data)
+    .map(
+      (key:string) => {
+        const param:string = data[key]
+        return `${encodeURIComponent(key)}=${encodeURIComponent(param)}`
+      }
+    )
+    .join("&");
 }

@@ -1,4 +1,4 @@
-export const HTTP = (url:string, data:object) => {
+export const HTTP = (url:string, data:string) => {
   return fetch(url, {
     method: 'POST',
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
