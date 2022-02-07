@@ -15,9 +15,17 @@
   </head>
   <body>
     <div id="app"></div>
+
     <form name="ask-song" method="post" netlify data-netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" />
       <textarea name="comment"></textarea>  
+    </form>
+
+    <form name="bus-request" method="post" netlify data-netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" required/>
+      <input type="number" name="seats" required/>
+      <input type="radio" name="color">
+      <textarea name="comment"></textarea>
     </form>
     <script type="module" src="/src/main.ts"></script>
   </body>

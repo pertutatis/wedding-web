@@ -1,5 +1,9 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import Card from "../ui/Card.vue"
+import BusForm from './BusForm.vue'
+
+let popupIsOpened = ref<boolean>(false)
 </script>
 
 <template>
@@ -18,12 +22,17 @@ import Card from "../ui/Card.vue"
         <p class="schedule__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore harum placeat incidunt dolore ab enim deserunt voluptates, itaque nobis. Necessitatibus repellendus tempora, delectus nam aliquid ipsum qui. Quisquam, sit harum.</p>
         <p class="schedule__text">
           Si quieres reservar una plaza no te olvides de hablar con nosotros para que lo tengamos en cuenta.
-          Puedes hacerlo por teléfono/whatsapp o a través de <a href="/about">este formulario</a>.
+          Puedes hacerlo por teléfono/whatsapp o a través de <a href="/about" @click.prevent="popupIsOpened = true">este formulario</a>.
         </p>
       </div>
       
     </div>
   </section>
+
+  <BusForm
+    v-show="popupIsOpened"
+    @close="popupIsOpened = false"
+  />
 </template>
 
 <style scoped lang="postcss">
