@@ -5,13 +5,9 @@ export const HTTP = (url:string, body:string, method:string) => {
     body
   })
   .then(response => {
-    console.log({response1: response});
-    
     return response.body
   })
   .then(rb => {
-    console.log({rb});
-    
     if (rb == null) return rb
     
     const reader = rb.getReader();
@@ -38,20 +34,10 @@ export const HTTP = (url:string, body:string, method:string) => {
       }
     });
   })
-  .then(stream => {
-    console.log({stream, resp: new Response(stream, { headers: { "Content-Type": "text/html" } })});
-    
+  .then(stream => {    
     // Respond with our stream
     return new Response(stream, { headers: { "Content-Type": "text/html" } });
   })
-  .then(result => {
-    // Do things with result
-    console.log({result});
-    
-    return result;
-  })
-  .catch(err => { 
-    console.log({error: err});
-    
-    throw err })
+  .then(result => result)
+  .catch(err => { throw err })
 }

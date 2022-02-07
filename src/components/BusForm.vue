@@ -33,6 +33,7 @@ function close ():void {
 <template>
   <div class="popup" @click="close">
     <div class="popup__wrapper" @click.stop>
+      <div class="popup__close" @click="close">X</div>
       <p class="popup__title">¿Quieres venir en bus?</p>
       <p class="popup__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla, eaque laborum reprehenderit sapiente voluptatibus.</p>
 
@@ -58,15 +59,15 @@ function close ():void {
         <div class="form__label">
           ¿Desde donde te gustaría salir? *
           <label class="radio">
-            <input type="radio" name="color" value="turia" v-model="origin">
+            <input type="radio" name="origin" value="turia" v-model="origin">
             <div class="radio-label">Camp del Turia</div>
           </label>
           <label class="radio">
-            <input type="radio" name="color" value="valencia" v-model="origin">
+            <input type="radio" name="origin" value="valencia" v-model="origin">
             <div class="radio-label">Valencia</div>
           </label>
           <label class="radio">
-            <input type="radio" name="color" value="indiferente" v-model="origin">
+            <input type="radio" name="origin" value="indiferente" v-model="origin">
             <div class="radio-label">Indiferente</div>
           </label>
         </div>
@@ -96,10 +97,11 @@ function close ():void {
   justify-content: center;
   width: 100%;
   height: 100%;
-  background-color: #00000070;
+  background-color: #00000090;
   cursor: pointer;
 }
 .popup__wrapper {
+  position: absolute;
   background-color: white;
   width: 100%;
   height: auto;
@@ -108,6 +110,18 @@ function close ():void {
   padding: 32px;
   overflow-y: scroll;
   cursor: auto;
+}
+
+.popup__close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  margin-bottom: 16px;
+  font-family: var(--secondary-font);
+  font-size: 32px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
 }
 
 .popup__title {

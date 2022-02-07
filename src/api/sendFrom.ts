@@ -1,7 +1,7 @@
 import { HTTP } from './http'
 
 interface IObjectKeys {
-  [key: string]: string ;
+  [key: string]: string
 }
 
 interface IFormData extends IObjectKeys {
@@ -13,13 +13,8 @@ export const sendForm = (formData:IFormData) => {
   const data:string = encode(formData)
 
   return HTTP('/', data, 'POST')
-    .then(result => {
-      console.log({result});
-      return result
-      
-    })
+    .then(result => result)
     .catch(err => { 
-      console.log({err});
       throw err
      })
 }
