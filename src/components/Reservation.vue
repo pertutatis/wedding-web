@@ -1,41 +1,43 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { sendForm } from '../api/sendFrom';
-
+interface IObjectKeys {
+  [key: string]: string ;
+}
 
 let name = ref<string>('')
 let comment = ref<string>('')
 
-// function encode(data) {
-//   return Object.keys(data)
-//     .map(
-//       (key) =>
-//         encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-//     )
-//     .join("&");
-// }
-
-// const handleSubmit = (event) => {
-//   event.preventDefault();
-//   fetch("/", {
-//     method: "POST",
-//     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-//     body: encode({
-//       "form-name": event.target.getAttribute("name"),
-//       ...name,
-//     }),
-//   })
-//     .then(() => console.log("/thank-you/"))
-//     .catch((error) => alert(error));
-// };
-
-function handleSubmit () {
-  sendForm({
-    'form-name': 'ask-song',
-    name: name.value,
-    comment: comment.value
-  })
+function encode(data:IObjectKeys) {
+  return Object.keys(data)
+    .map(
+      (key) =>
+        encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+    )
+    .join("&");
 }
+
+const handleSubmit = () => {
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: encode({
+      'form-name': 'ask-song',
+      'name': name.value,
+      'comment': comment.value
+    }),
+  })
+    .then(() => console.log("/thank-you/"))
+    .catch((error) => alert(error));
+};
+
+// function handleSubmit () {
+//   sendForm({
+//     'form-name': 'ask-song',
+//     name: name.value,
+//     comment: comment.value
+//   })
+// }
 </script>
 
 <template>
