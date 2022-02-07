@@ -12,22 +12,16 @@ interface IFormData extends IObjectKeys {
 export const sendForm = (formData:IFormData) => {
   const data:string = encode(formData)
 
-  return HTTP('/', data)
-    .then(result => {
-      console.log(result);
-      
-    })
+  return HTTP('/', data, 'POST')
+    .then(result => result)
     .catch(err => { throw err })
-
 }
 
 function encode (data:IFormData) {
   return Object.keys(data)
     .map(
-      (key:string) => {
-        const param:string = data[key]
-        return `${encodeURIComponent(key)}=${encodeURIComponent(param)}`
-      }
+      (key) =>
+        encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
     )
     .join("&");
 }

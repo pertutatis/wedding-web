@@ -1,43 +1,19 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-// import { sendForm } from '../api/sendFrom';
-interface IObjectKeys {
-  [key: string]: string ;
-}
+import { sendForm } from '../api/sendFrom';
 
 let name = ref<string>('')
 let comment = ref<string>('')
 
-function encode(data:IObjectKeys) {
-  return Object.keys(data)
-    .map(
-      (key) =>
-        encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-    )
-    .join("&");
-}
-
-const handleSubmit = () => {
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: encode({
-      'form-name': 'ask-song',
+function handleSubmit () {
+  sendForm({
+    'form-name': 'ask-song',
       'name': name.value,
       'comment': comment.value
-    }),
-  })
-    .then(() => console.log("/thank-you/"))
-    .catch((error) => alert(error));
-};
-
-// function handleSubmit () {
-//   sendForm({
-//     'form-name': 'ask-song',
-//     name: name.value,
-//     comment: comment.value
-//   })
-// }
+    })
+    .then((response) => console.log("/thank-you/", response))
+    .catch((error) => console.log(error));
+}
 </script>
 
 <template>
