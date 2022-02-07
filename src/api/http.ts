@@ -40,7 +40,12 @@ export const HTTP = (url:string, body:string, method:string) => {
   })
   .then(result => {
     // Do things with result
+    console.log({result});
+    
     return result;
   })
-  .catch(err => { throw err })
+  .catch(err => { 
+    console.log({error: err});
+    
+    throw err })
 }

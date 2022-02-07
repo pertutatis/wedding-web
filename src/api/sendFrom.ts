@@ -14,12 +14,12 @@ export const sendForm = (formData:IFormData) => {
 
   return HTTP('/', data, 'POST')
     .then(result => {
-      console.log(result);
+      console.log({result});
       return result
       
     })
     .catch(err => { 
-      console.log(err);
+      console.log({err});
       throw err
      })
 }
