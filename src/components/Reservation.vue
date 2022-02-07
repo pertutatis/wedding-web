@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { sendForm } from '../api/sendFrom';
+// import { sendForm } from '../api/sendFrom';
 interface IObjectKeys {
   [key: string]: string ;
 }
