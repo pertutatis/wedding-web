@@ -6,8 +6,32 @@ import { sendForm } from '../api/sendFrom';
 let name = ref<string>('')
 let comment = ref<string>('')
 
+// function encode(data) {
+//   return Object.keys(data)
+//     .map(
+//       (key) =>
+//         encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+//     )
+//     .join("&");
+// }
+
+// const handleSubmit = (event) => {
+//   event.preventDefault();
+//   fetch("/", {
+//     method: "POST",
+//     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+//     body: encode({
+//       "form-name": event.target.getAttribute("name"),
+//       ...name,
+//     }),
+//   })
+//     .then(() => console.log("/thank-you/"))
+//     .catch((error) => alert(error));
+// };
+
 function handleSubmit () {
   sendForm({
+    'form-name': 'ask-song',
     name: name.value,
     comment: comment.value
   })
