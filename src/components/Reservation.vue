@@ -1,10 +1,4 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import loadIframe from '../utils/iframeLoader'
-
-onMounted(() => {
-  loadIframe()
-})
 </script>
 
 <template>
@@ -14,32 +8,35 @@ onMounted(() => {
         <h3 class="reservation__title">¡Que no pare la fiesta!</h3>
       </div>
       <div class="reservation__form">
-        <p class="reservation__text">¿Crees que hay alguna canción que no puede faltar y que tenemos que tenerla en cuenta si o si? ¿No concibes una boda sin paquito el chocolatero? ¿hay un temazo que nos quieres dedicar? No hay, problema, lo tendremos en cuenta, solo dinoslo. Tambien decirte que igual algo de filtro haremos... que nos conocemos.</p>
-        <iframe id="JotFormIFrame-220224174899360" title="New Customer Registration Form" onload="window.parent.scrollTo(0,0)" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://form.jotform.com/220224174899360" frameborder="0" style=" min-width: 100%; height:539px; border:none;" scrolling="no" > </iframe>  
+        <p class="reservation__text">
+          ¿Crees que hay alguna canción que no puede faltar y que tenemos que tenerla en
+          cuenta si o si? ¿No concibes una boda sin paquito el chocolatero? ¿hay un temazo
+          que nos quieres dedicar? No hay, problema, lo tendremos en cuenta, solo dinoslo.
+          Tambien decirte que igual algo de filtro haremos... que nos conocemos.
+        </p>
+
+        <form action="">
+          <label>
+            Dinos quien eres *
+            <input type="text" />
+          </label>
+
+          <label>
+            ¿Qué canción no puede faltar?
+            <textarea name="" id="" cols="30" rows="5"></textarea>
+          </label>
+
+          <input type="submit" value="Enviar" />
+        </form>
+
       </div>
     </div>
   </section>
 </template>
 
 <style scoped lang="postcss">
-.reservation {
-  margin-bottom: 0;
-}
-
 .reservation__wrapper {
   position: relative;
-  bottom: -50px;
-  
-  &:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 2;
-    width: 100%;
-    background: var(--background-color);
-    height: 54px;
-  }
 }
 
 .reservation__head {
@@ -54,14 +51,14 @@ onMounted(() => {
   }
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: black;
-    opacity: .4;
+    opacity: 0.4;
   }
 }
 
@@ -73,6 +70,8 @@ onMounted(() => {
   @media (min-width: 1024px) {
     max-width: 80%;
     margin: -160px auto 0;
+    padding-left: 80px;
+    padding-right: 80px;
   }
 }
 
@@ -92,8 +91,7 @@ onMounted(() => {
 }
 
 .reservation__text {
-  max-width: 752px;
-  margin: 0 auto 8px;
+  margin-bottom: 24px;
   padding-top: 24px;
   font-family: var(--secondary-font);
   font-weight: 300;
@@ -102,9 +100,86 @@ onMounted(() => {
   color: var(--text-color);
 
   @media (min-width: 768px) {
-    padding-left: 38px;
-    padding-right: 38px;
     font-size: 18px;
+  }
+}
+
+label {
+  display: block;
+  font-family: var(--primary-font);
+  font-size: 18px;
+  color: var(--primary-color);
+  margin-bottom: 24px;
+
+  @media (min-width: 768px) {
+    font-size: 22px;
+  }
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 8px 0;
+  font-family: var(--secondary-font);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.44;
+  color: var(--text-color);
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid var(--text-color);
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+
+  &:focus {
+    border-bottom: 1px solid black;
+    outline: none;
+  }
+
+  &::placeholder {
+    color: gray;
+  }
+}
+
+textarea {
+  display: block;
+  min-height: 50px;
+}
+
+/* input[type="checkbox"],
+input[type="radio"] {
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+} */
+
+input[type="submit"] {
+  display: block;
+  padding: 16px 56px;
+  margin: 0 auto;
+  font-family: var(--secondary-font);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--primary-color);
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: white;
+    background-color: var(--primary-color);
+  }
+
+  &:disabled {
+    opacity: .5;
   }
 }
 </style>
