@@ -17,6 +17,8 @@ function handleSubmit () {
   sendForm({
     'form-name': 'bus-request',
     'name': name.value,
+    'seats': seats.value,
+    'origin': origin.value,
     'comment': comment.value
   })
   .then(() => formStatus.value = 'success')

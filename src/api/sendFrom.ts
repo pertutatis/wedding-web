@@ -13,8 +13,15 @@ export const sendForm = (formData:IFormData) => {
   const data:string = encode(formData)
 
   return HTTP('/', data, 'POST')
-    .then(result => result)
-    .catch(err => { throw err })
+    .then(result => {
+      console.log(result);
+      return result
+      
+    })
+    .catch(err => { 
+      console.log(err);
+      throw err
+     })
 }
 
 function encode (data:IFormData) {
