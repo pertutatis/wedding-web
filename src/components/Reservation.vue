@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
+
+let name = ref<string>('')
+let comment = ref<string>('')
 </script>
 
 <template>
@@ -15,15 +20,21 @@
           Tambien decirte que igual algo de filtro haremos... que nos conocemos.
         </p>
 
-        <form action="">
+        <form
+          name="ask-song"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="ask-song" />
           <label>
             Dinos quien eres *
-            <input type="text" />
+            <input type="text" v-model="name" name="name" />
           </label>
 
           <label>
             ¿Qué canción no puede faltar?
-            <textarea name="" id="" cols="30" rows="5"></textarea>
+            <textarea cols="30" rows="5" v-model="comment" name="comment"></textarea>
           </label>
 
           <input type="submit" value="Enviar" />

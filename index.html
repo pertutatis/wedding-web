@@ -15,6 +15,10 @@
   </head>
   <body>
     <div id="app"></div>
+    <form name="ask-song" method="post" netlify data-netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <textarea name="comment"></textarea>  
+    </form>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
