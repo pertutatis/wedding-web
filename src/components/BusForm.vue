@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { sendForm } from '../api/sendFrom';
+import { sendForm } from '../api/sendForm';
 
 type TFormStatus = 'active' | 'error' | 'success'
 type TOrigin = 'turia' | 'valencia' | 'indiferente'
