@@ -1,10 +1,15 @@
 import Card, { ICard } from '../models/Card'
 
-interface IContent extends Array<ICard>{}
+export interface IResponse extends Array<ICard>{}
+
+export interface IContent {
+  contactAna: ICard | '',
+  contactDiego: ICard | ''
+}
 
 class ServiceHome {
-  getHome (content:IContent) {
-    const home = {
+  getHome (content:IResponse) {
+    const home:IContent = {
       contactAna: this.getCard(content, 'contact_ana'),
       contactDiego: this.getCard(content, 'contact_diego')
     }
@@ -12,7 +17,7 @@ class ServiceHome {
     return home
   }
 
-  getCard (content:IContent, component:string) : ICard | '' {
+  getCard (content:IResponse, component:string) : ICard | '' {
     if (!Array.isArray(content)) {
       return ''
     }

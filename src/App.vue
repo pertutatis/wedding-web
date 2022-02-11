@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import Header from "./components/Header.vue";
 import CountDown from "./components/CountDown.vue"
 import Schedule from "./components/Schedule.vue"
@@ -9,9 +7,15 @@ import Reservation from "./components/Reservation.vue"
 import Contact from "./components/Contact.vue"
 import Disclaimer from "./components/Disclaimer.vue"
 import Footer from "./components/Footer.vue"
-import getHome from './api/getHome'
 
-getHome()
+import { onBeforeMount } from 'vue'
+import { useAppStore } from './stores/app'
+
+const store = useAppStore()
+
+onBeforeMount(async () => {
+  store.getContent()
+})
 
 </script>
 

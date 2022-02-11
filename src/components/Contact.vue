@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import Content from '../ui/Content.vue'
 import Card from "../ui/Card.vue"
+
+import { useAppStore } from '../stores/app'
+
+const store = useAppStore()
 </script>
 
 <template>
@@ -9,14 +13,16 @@ import Card from "../ui/Card.vue"
     text="Puedes contactar con nosotros en cualquier momento por WhatsApp o por email. Te dejamos aquí abajo el contacto de los dos por si no los tienes:"
   >
     <Card
+      v-if="store.contactAna"
+      :title="store.contactAna.title"
+      :text="store.contactAna.text"
       class="contact__card"
-      title="Ana caballero"
-      text="600761357 anacaballero@gmail.com"
     />
     <Card
+      v-if="store.contactDiego"
+      :title="store.contactDiego.title"
+      :text="store.contactDiego.text"
       class="contact__card"
-      title="Diego Pertusa"
-      text="600761357 anacaballero@gmail.com"
     />
   </Content>
 </template>
