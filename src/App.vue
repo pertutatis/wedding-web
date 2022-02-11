@@ -9,6 +9,10 @@ import Reservation from "./components/Reservation.vue"
 import Contact from "./components/Contact.vue"
 import Disclaimer from "./components/Disclaimer.vue"
 import Footer from "./components/Footer.vue"
+import getHome from './api/getHome'
+
+getHome()
+
 </script>
 
 <template>

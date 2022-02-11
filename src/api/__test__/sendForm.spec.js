@@ -22,6 +22,10 @@ const requestBody = [
   'POST'
 ]
 
+afterEach(() => {
+  jest.clearAllMocks()
+})
+
 describe('api', () => {
   it('gets a response', async () => {
     const sendResponse = await sendForm({
