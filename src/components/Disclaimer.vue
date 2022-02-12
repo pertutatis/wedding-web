@@ -1,12 +1,15 @@
 <script setup lang="ts">
+import { useAppStore } from '../stores/app'
+
+const store = useAppStore()
 </script>
 
 <template>
   <section class="section">
-    <div class="section__wrapper content">
+    <div class="section__wrapper content" v-if="store.bankAccount">
 
-        <p class="content__text">Para nosotros el mayor regalo es que nos acompañes ese día. Aún así, como nos lo habéis pedido muchos, aquí dejamos el número de cuenta:</p>
-        <p class="content__text">ESXX XXXX XX XXXXXXXXXXXXXX</p>
+        <p class="content__text">{{ store.bankAccount.text }}</p>
+        <p class="content__text">{{ store.bankAccount.account }}</p>
        
     </div>
   </section>

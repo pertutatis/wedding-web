@@ -23,6 +23,14 @@ export const useAppStore = defineStore({
       }
 
       return state.content.contactDiego
+    },
+
+    bankAccount(state) {
+      if (state.content === null || !state.content.bankAccount) {
+        return false
+      }
+
+      return state.content.bankAccount
     }
   },
 
