@@ -4,12 +4,15 @@ import BankAccount, { IBankAccount } from '../models/BankAccount'
 export interface IResponse extends Array<ICard|IBankAccount>{}
 
 export interface IContent {
-  contactAna: ICard | '',
-  contactDiego: ICard | '',
-  bankAccount: IBankAccount | ''
+  contactAna: ICard | null,
+  contactDiego: ICard | null,
+  bankAccount: IBankAccount | null
 }
 
-const cardcomponents = ['contact_ana', 'contact_diego']
+const cardComponents = ['contact_ana', 'contact_diego']
+
+type cardcomponents = 'contact_ana' | 'contact_diego'
+type bankComponents = 'bank_account'
 
 class ServiceHome {
   getHome (content:IResponse) {
@@ -22,49 +25,25 @@ class ServiceHome {
     return home
   }
     
-    getComponent(content:IResponse, component:string) {
+  getComponent(content:IResponse, component:cardcomponents) : ICard | null
+  getComponent(content:IResponse, component:bankComponents) : IBankAccount | null
+  getComponent(content:IResponse, component:string) : ICard | IBankAccount | null {
       if (!Array.isArray(content)) {
-      return ''
+      return null
     }
     
-    const selectedComponent = content.find((o:ICard|IBankAccount) => o.id === component)
+    const selectedComponent = content.find((contentItem) => contentItem.id === component)
     
-    
-    let cardComponent = selectedComponent as ICard;
-    let bankComponent = selectedComponent as IBankAccount;
-    
-    if (selectedComponent && cardcomponents.includes(cardComponent.id)) {
-      let card:ICard = new Card(cardComponent)
-      return card
+    if (selectedComponent && (selectedComponent.id == 'contact_ana' || selectedComponent.id == 'contact_diego')) {
+      return new Card(selectedComponent)
     }
 
-    if (selectedComponent && bankComponent.id == 'bank_account') {
-      let bank:IBankAccount = new BankAccount(bankComponent)
-      return bank
+    if (selectedComponent && selectedComponent.id == 'bank_account') {
+      return new BankAccount(selectedComponent)
     }
 
-    return ''
+    return null
   }
-
-// getBankComponent(content:IResponse, component:string) : IBankAccount | '' {
-//   if (!Array.isArray(content)) {
-//     return ''
-//   }
-  
-//   const selectedComponent = content.find((o) => o.id === component)
-
-//   return selectedComponent ? new BankAccount(selectedComponent) : ''
-// }
-
-// getCard (content:IResponse, component:string) : ICard | '' {
-//   if (!Array.isArray(content)) {
-//     return ''
-//   }
-  
-//   const selectedComponent = content.find((o:ICard|IBankAccount) => o.id === component)
-
-//   return selectedComponent ? new Card(selectedComponent) : ''
-// }
 }
 
 export default new ServiceHome()

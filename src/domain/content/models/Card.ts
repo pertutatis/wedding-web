@@ -1,5 +1,5 @@
 export interface ICard {
-  id: string
+  id: 'contact_ana' | 'contact_diego'
   title: string
   text: string
 }
@@ -7,7 +7,7 @@ export interface ICard {
 export default class Card implements ICard {
   title: string
   text: string
-  id: string
+  id: 'contact_ana' | 'contact_diego'
   constructor (card:ICard) {
     this.id = card.id
     this.title = card.title
