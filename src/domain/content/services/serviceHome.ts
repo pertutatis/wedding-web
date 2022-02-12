@@ -4,9 +4,9 @@ import BankAccount, { IBankAccount } from '../models/BankAccount'
 export interface IResponse extends Array<ICard|IBankAccount>{}
 
 export interface IContent {
+  bankAccount: IBankAccount | null,
   contactAna: ICard | null,
   contactDiego: ICard | null,
-  bankAccount: IBankAccount | null
 }
 
 const cardComponents = ['contact_ana', 'contact_diego']
