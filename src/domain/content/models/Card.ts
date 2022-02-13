@@ -1,5 +1,7 @@
+export type cardComponents = 'contact_ana' | 'contact_diego' | 'ceremonia' | 'cocktail' | 'fiesta' | 'resopon'
+
 export interface ICard {
-  id: 'contact_ana' | 'contact_diego'
+  id: cardComponents
   title: string
   text: string
 }
@@ -7,7 +9,7 @@ export interface ICard {
 export default class Card implements ICard {
   title: string
   text: string
-  id: 'contact_ana' | 'contact_diego'
+  id: cardComponents
   constructor (card:ICard) {
     this.id = card.id
     this.title = card.title

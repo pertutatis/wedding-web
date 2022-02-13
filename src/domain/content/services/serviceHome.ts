@@ -1,48 +1,95 @@
-import Card, { ICard } from '../models/Card'
-import BankAccount, { IBankAccount } from '../models/BankAccount'
+import Card, { cardComponents, ICard } from '../models/Card'
+import BankAccount, { bankComponents, IBankAccount } from '../models/BankAccount'
+import Content, { ContentComponents, IContent }  from '../models/Content'
 
-export interface IResponse extends Array<ICard|IBankAccount>{}
+export interface IResponse extends Array<ICard|IBankAccount|IContent>{}
 
-export interface IContent {
-  bankAccount: IBankAccount | null,
+export interface IHomeContent {
+  // schdule section
+  schedule: IContent | null,
+  scheduleCeremony: ICard | null,
+  scheduleCocktail: ICard | null,
+  scheduleParty: ICard | null,
+  scheduleResopon: ICard | null,
+  // How to arrive section
+  howToArrive: IContent | null,
+  // Music form
+  reservation: IContent | null,
+  // Contact section
+  contact: IContent | null,
   contactAna: ICard | null,
   contactDiego: ICard | null,
+  // bank closer
+  bankAccount: IBankAccount | null,
 }
 
-const cardComponents = ['contact_ana', 'contact_diego']
-
-type cardcomponents = 'contact_ana' | 'contact_diego'
-type bankComponents = 'bank_account'
+const contentIds:Array<ContentComponents> = ['schedule', 'how_to_arrive', 'reservation', 'contact']
+const cardIds:Array<cardComponents> = ['contact_ana', 'contact_diego', 'ceremonia', 'cocktail', 'fiesta', 'resopon']
+const bankIds:Array<bankComponents> = ['bank_account']
 
 class ServiceHome {
   getHome (content:IResponse) {
-    const home:IContent = {
-      bankAccount: this.getComponent(content, 'bank_account'),
+    const home:IHomeContent = {
+      schedule: this.getComponent(content, 'schedule'),
+      scheduleCeremony: this.getComponent(content, 'ceremonia'),
+      scheduleCocktail: this.getComponent(content, 'cocktail'),
+      scheduleParty: this.getComponent(content, 'fiesta'),
+      scheduleResopon: this.getComponent(content, 'resopon'),
+      // How to arrive section
+      howToArrive: this.getComponent(content, 'how_to_arrive'),
+      // Music form
+      reservation: this.getComponent(content, 'reservation'),
+      // Contact section
+      contact: this.getComponent(content, 'contact'),
       contactAna: this.getComponent(content, 'contact_ana'),
       contactDiego: this.getComponent(content, 'contact_diego'),
+      // bank closer
+      bankAccount: this.getComponent(content, 'bank_account'),
     }
     
     return home
   }
     
-  getComponent(content:IResponse, component:cardcomponents) : ICard | null
+  getComponent(content:IResponse, component:cardComponents) : ICard | null
   getComponent(content:IResponse, component:bankComponents) : IBankAccount | null
-  getComponent(content:IResponse, component:string) : ICard | IBankAccount | null {
+  getComponent(content:IResponse, component:ContentComponents) : IContent | null
+  getComponent(content:IResponse, component:string) : ICard | IBankAccount | IContent | null {
       if (!Array.isArray(content)) {
       return null
     }
     
     const selectedComponent = content.find((contentItem) => contentItem.id === component)
+
+    const contentComponent = selectedComponent as IContent
+    const cardComponent = selectedComponent as ICard
+    const bankComponent = selectedComponent as IBankAccount
+
+    if (selectedComponent && this.checkArray(contentIds, contentComponent.id)) {
+      return new Content(contentComponent)
+    }
     
-    if (selectedComponent && (selectedComponent.id == 'contact_ana' || selectedComponent.id == 'contact_diego')) {
-      return new Card(selectedComponent)
+    if (selectedComponent && this.checkArray(cardIds, cardComponent.id)) {
+      return new Card(cardComponent)
     }
 
-    if (selectedComponent && selectedComponent.id == 'bank_account') {
-      return new BankAccount(selectedComponent)
+    if (selectedComponent && this.checkArray(bankIds, bankComponent.id)) {      
+      return new BankAccount(bankComponent)
     }
 
     return null
+  }
+
+  checkArray (array:Array<string>, id:string) {
+    let response = false
+    
+    array.forEach(component => {
+      if (component == id) {
+        response = true
+        return
+      }
+    });
+
+    return response
   }
 }
 

@@ -1,11 +1,11 @@
 import { defineStore, acceptHMRUpdate } from 'pinia'
 import getHome from '../api/getHome'
-import { IContent } from '../domain/content/services/serviceHome';
+import { IHomeContent } from '../domain/content/services/serviceHome';
 
 export const useAppStore = defineStore({
   id: 'app',
   state: () => ({
-    content: null as IContent | null,
+    content: null as IHomeContent | null,
   }),
 
   getters: {

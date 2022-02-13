@@ -1,15 +1,21 @@
 import serviceHome from '../serviceHome'
 import Card from '../../models/Card';
 import BankAccount from '../../models/BankAccount'
+import Content from '../../models/Content'
 
 const cardComponent = {
-  id: 'contact',
+  id: 'test',
   text: '600112233',
   title: 'John doe'
 }
 const cardComponentAna = {
   id: 'contact_ana',
   text: '600112233',
+  title: 'John doe'
+}
+const contactComponent = {
+  id: 'contact',
+  text: 'Lorem ipsum',
   title: 'John doe'
 }
 const cardComponentDiego = {
@@ -22,7 +28,24 @@ const cardBankAccount = {
   text: 'Lorem ipsum',
   account: 'ESXX XXXX XX XXXXXXXXXXXXXX'
 }
-const emptyResponse = {contactAna: null, contactDiego: null, bankAccount: null}
+const emptyResponse = {
+  // schedulle section
+  schedule: null,
+  scheduleCeremony: null,
+  scheduleCocktail: null,
+  scheduleParty: null,
+  scheduleResopon: null,
+  // How to arrive section
+  howToArrive: null,
+  // Music form
+  reservation: null,
+  // Contact section
+  contact: null,
+  contactAna: null, 
+  contactDiego: null,
+  // bank closer
+  bankAccount: null
+}
 
 describe('Home content service emties', () => {
   it('retrieves the data empty if there is nocontent', () => {
@@ -46,12 +69,25 @@ describe('Home content service emties', () => {
 
 describe('Home content service', () => {
   it('retrieves the data for all components', () => {
-    const homeContent = serviceHome.getHome([cardComponentAna, cardComponentDiego, cardBankAccount])
+    const homeContent = serviceHome.getHome([cardComponentAna, cardComponentDiego, cardBankAccount, contactComponent])
 
     expect(homeContent).toStrictEqual({
-      bankAccount: new BankAccount(cardBankAccount),
+      // schedulle section
+      schedule: null,
+      scheduleCeremony: null,
+      scheduleCocktail: null,
+      scheduleParty: null,
+      scheduleResopon: null,
+      // How to arrive section
+      howToArrive: null,
+      // Music form
+      reservation: null,
+      // Contact section
+      contact: new Content(contactComponent),
       contactAna: new Card(cardComponentAna), 
-      contactDiego: new Card(cardComponentDiego)
+      contactDiego: new Card(cardComponentDiego),
+      // bank closer
+      bankAccount: new BankAccount(cardBankAccount)
     });
   });
 });

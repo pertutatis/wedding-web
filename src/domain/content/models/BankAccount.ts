@@ -1,11 +1,13 @@
+export type bankComponents = 'bank_account'
+
 export interface IBankAccount {
-  id: 'bank_account'
+  id: bankComponents
   account: string
   text: string
 }
 
 export default class BankAccount implements IBankAccount {
-  id: 'bank_account'
+  id: bankComponents
   account: string
   text: string
   constructor (card:IBankAccount) {
