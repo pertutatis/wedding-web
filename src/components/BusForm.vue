@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useAppStore } from '../stores/app'
 import { sendForm } from '../api/sendForm';
+
+const store = useAppStore()
 
 type TFormStatus = 'active' | 'error' | 'success'
 type TOrigin = 'turia' | 'valencia' | 'indiferente'
@@ -32,10 +35,10 @@ function close ():void {
 
 <template>
   <div class="popup" @click="close">
-    <div class="popup__wrapper" @click.stop>
+    <div class="popup__wrapper" @click.stop v-if="store.busPopup">
       <div class="popup__close" @click="close">X</div>
-      <p class="popup__title">¿Quieres venir en bus?</p>
-      <p class="popup__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla, eaque laborum reprehenderit sapiente voluptatibus.</p>
+      <p class="popup__title">{{ store.busPopup.title }}</p>
+      <p class="popup__text">{{ store.busPopup.text }}</p>
 
       <form
         v-if="formStatus == 'active'"

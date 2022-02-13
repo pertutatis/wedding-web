@@ -35,6 +35,7 @@ const emptyResponse = {
   scheduleCocktail: null,
   scheduleParty: null,
   scheduleResopon: null,
+  busPopup: null,
   // How to arrive section
   howToArrive: null,
   // Music form
@@ -78,6 +79,7 @@ describe('Home content service', () => {
       scheduleCocktail: null,
       scheduleParty: null,
       scheduleResopon: null,
+      busPopup: null,
       // How to arrive section
       howToArrive: null,
       // Music form

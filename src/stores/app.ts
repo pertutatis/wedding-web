@@ -95,6 +95,14 @@ export const useAppStore = defineStore({
       }
 
       return state.content.reservation
+    },
+    
+    busPopup(state) {
+      if (state.content === null || !state.content.busPopup) {
+        return false
+      }
+
+      return state.content.busPopup
     }
   },
 
