@@ -30,7 +30,7 @@ const store = useAppStore()
 <style scoped lang="postcss">
 .contact__card {
   margin-bottom: 24px;
-  max-width: 300px;
+  max-width: 320px;
   margin-right: auto;
   margin-left: auto;
 }
