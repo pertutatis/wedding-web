@@ -1,19 +1,19 @@
 <script setup lang="ts">
+import { useAppStore } from '../stores/app'
 import SongForm from './SongForm.vue'
+
+const store = useAppStore()
 </script>
 
 <template>
-  <section class="section form">
+  <section class="section form" v-if="store.reservation">
     <div class="section__wrapper form__wrapper">
       <div class="form__head">
-        <h3 class="form__title">¡Que no pare la fiesta!</h3>
+        <h3 class="form__title">{{ store.reservation.title }}</h3>
       </div>
       <div class="form__form">
         <p class="form__text">
-          ¿Crees que hay alguna canción que no puede faltar y que tenemos que tenerla en
-          cuenta si o si? ¿No concibes una boda sin paquito el chocolatero? ¿hay un temazo
-          que nos quieres dedicar? No hay, problema, lo tendremos en cuenta, solo dinoslo.
-          Tambien decirte que igual algo de filtro haremos... que nos conocemos.
+          {{ store.reservation.text }}
         </p>
         <SongForm />
       </div>

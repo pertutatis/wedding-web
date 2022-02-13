@@ -1,13 +1,17 @@
 <script setup lang="ts">
+import { useAppStore } from '../stores/app'
 import Content from '../ui/Content.vue'
+
+const store = useAppStore()
 </script>
 
 <template>
   <Content
-    title="Como llegar"
-    text="¡Llegar a Huerto Bonet es super fácil y no tiene perdida! Y es que está situado al lado de la autovía A7 en el propio Alginet. De todos modos no te preocupes por que te dejamos un pequeño mapa aquí al lado y un enlace que te llevará directamente a él desde google maps."
-    linkUrl="https://goo.gl/maps/m8q8pZCd7A7xqw848"
-    linkText="Ver en google maps."
+    v-if="store.howToArrive"
+    :title="store.howToArrive.title"
+    :text="store.howToArrive.text"
+    :linkUrl="store.howToArrive.link_url"
+    :linkText="store.howToArrive.link_text"
   >
     <img class="map__image" src="../assets/mapa.webp" alt="Como llegar" width="596" height="514">
   </Content>

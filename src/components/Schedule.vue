@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useAppStore } from '../stores/app'
 import Card from "../ui/Card.vue"
 import BusForm from './BusForm.vue'
+
+const store = useAppStore()
 
 let popupIsOpened = ref<boolean>(false)
 </script>
@@ -11,18 +14,17 @@ let popupIsOpened = ref<boolean>(false)
     <div class="section__wrapper schedule">
 
       <div class="schedule__column schedule__column--grid">
-        <Card :is-small="true" title="Ceremonia" text ="12:30" />
-        <Card :is-small="true" title="cocktail" text ="13:30" />
-        <Card :is-small="true" title="Fiesta" text ="17:00" />
-        <Card :is-small="true" title="Resopón" text ="21:00" />
+        <Card v-if="store.scheduleCeremony" :is-small="true" :title="store.scheduleCeremony.title" :text="store.scheduleCeremony.text" />
+        <Card v-if="store.scheduleCocktail" :is-small="true" :title="store.scheduleCocktail.title" :text="store.scheduleCocktail.text" />
+        <Card v-if="store.scheduleParty" :is-small="true" :title="store.scheduleParty.title" :text="store.scheduleParty.text" />
+        <Card v-if="store.scheduleResopon" :is-small="true" :title="store.scheduleResopon.title" :text="store.scheduleResopon.text" />
       </div>
 
-      <div class="schedule__column">
-        <h3 class="schedule__title">Bienvenidos a nuesta boda, ¡por fin!</h3>
-        <p class="schedule__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore harum placeat incidunt dolore ab enim deserunt voluptates, itaque nobis. Necessitatibus repellendus tempora, delectus nam aliquid ipsum qui. Quisquam, sit harum.</p>
+      <div class="schedule__column" v-if="store.schedule">
+        <h3 class="schedule__title">{{ store.schedule.title }}</h3>
         <p class="schedule__text">
-          Si quieres reservar una plaza no te olvides de hablar con nosotros para que lo tengamos en cuenta.
-          Puedes hacerlo por teléfono/whatsapp o a través de <a href="/about" @click.prevent="popupIsOpened = true">este formulario</a>.
+          <span style="white-space: pre-line;" v-html="store.schedule.text" />
+          <a :href="store.schedule.link_url" @click.prevent="popupIsOpened = true" v-text="store.schedule.link_text" />.
         </p>
       </div>
       

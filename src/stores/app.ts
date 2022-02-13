@@ -9,6 +9,14 @@ export const useAppStore = defineStore({
   }),
 
   getters: {
+    contact(state) {
+      if (state.content === null || !state.content.contact) {
+        return false
+      }
+
+      return state.content.contact
+    },
+
     contactAna(state) {
       if (state.content === null || !state.content.contactAna) {
         return false
@@ -31,6 +39,62 @@ export const useAppStore = defineStore({
       }
 
       return state.content.bankAccount
+    },
+
+    schedule(state) {
+      if (state.content === null || !state.content.schedule) {
+        return false
+      }
+
+      return state.content.schedule
+    },
+
+    scheduleCeremony(state) {
+      if (state.content === null || !state.content.scheduleCeremony) {
+        return false
+      }
+
+      return state.content.scheduleCeremony
+    },
+
+    scheduleCocktail(state) {
+      if (state.content === null || !state.content.scheduleCocktail) {
+        return false
+      }
+
+      return state.content.scheduleCocktail
+    },
+
+    scheduleParty(state) {
+      if (state.content === null || !state.content.scheduleParty) {
+        return false
+      }
+
+      return state.content.scheduleParty
+    },
+
+    scheduleResopon(state) {
+      if (state.content === null || !state.content.scheduleResopon) {
+        return false
+      }
+
+      return state.content.scheduleResopon
+    },
+
+    howToArrive(state) {
+      if (state.content === null || !state.content.howToArrive) {
+        return false
+      }
+
+      return state.content.howToArrive
+    },
+
+    reservation(state) {
+      if (state.content === null || !state.content.reservation) {
+        return false
+      }
+
+      return state.content.reservation
     }
   },
 

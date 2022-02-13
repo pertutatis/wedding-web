@@ -9,8 +9,9 @@ const store = useAppStore()
 
 <template>
   <Content
-    title="¿Necesitas algo?"
-    text="Puedes contactar con nosotros en cualquier momento por WhatsApp o por email. Te dejamos aquí abajo el contacto de los dos por si no los tienes:"
+    v-if="store.contact"
+    :title="store.contact.title"
+    :text="store.contact.text"
   >
     <Card
       v-if="store.contactAna"
