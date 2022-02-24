@@ -38,7 +38,7 @@ onBeforeMount(async () => {
 :root {
   --primary-font: "Playfair Display", arial, serif;
   --secondary-font: "Montserrat", baskerville, arial, sans-serif;
-  --primary-color: #496428;
+  --primary-color: #2f4e34;
   --text-color: #706e67;
   --background-color: #f3f2f1;
   --error-color: #b13b3b;
