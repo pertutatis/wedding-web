@@ -21,9 +21,10 @@
 .footer__head {
   position: relative;
   padding: 48px;
-  background-image: url(../assets/bg.jpg);
-  background-image: url(../assets/bg.webp);
+  background-image: url(../assets/bg1.jpg);
+  /* background-image: url(../assets/bg.webp); */
   background-size: cover;
+  background-position: center;
 
   &:before {
     content: '';
