@@ -11,9 +11,9 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div class="card" :class="{'card--small-card' : isSmall}">
-    <div class="card__title">{{ title }}</div>
-    <div class="card__text">{{ text }}</div>
+  <div class="card" :class="{'card--small-card' : isSmall}" data-test-id="card">
+    <div class="card__title" data-test-id="card-title">{{ title }}</div>
+    <div class="card__text" data-test-id="card-text">{{ text }}</div>
   </div>
 </template>
 

@@ -17,9 +17,9 @@ withDefaults(defineProps<Props>(), {
     <div class="section__wrapper content">
 
       <div class="content__column">
-        <h4 class="content__title">{{ title }}</h4>
-        <p class="content__text">{{ text }}</p>
-        <a v-if="linkText" class="content__link" :href="linkUrl" target="_blank" rel="noopener">{{ linkText }}</a>
+        <h4 class="content__title" data-test-id="content-title">{{ title }}</h4>
+        <p class="content__text" data-test-id="content-text">{{ text }}</p>
+        <a v-if="linkText" class="content__link" :href="linkUrl" target="_blank" rel="noopener" data-test-id="content-link">{{ linkText }}</a>
       </div>
 
       <div class="content__column">
