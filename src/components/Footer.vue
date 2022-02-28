@@ -22,7 +22,7 @@
   position: relative;
   padding: 48px;
   background-image: url(../assets/bg1.jpg);
-  /* background-image: url(../assets/bg.webp); */
+  background-image: url(../assets/bg1.webp);
   background-size: cover;
   background-position: center;
 
