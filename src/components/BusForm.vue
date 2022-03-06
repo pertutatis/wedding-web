@@ -50,17 +50,17 @@ function close ():void {
       >
         <input type="hidden" name="form-name" value="bus-request" />
         <label class="form__label">
-          Dinos quien eres *
+          Dinos quién eres *
           <input type="text" v-model="name" name="name" required/>
         </label>
 
         <label class="form__label">
-          ¿Cuantas plazas te gustaría reservar? *
+          ¿Cuántas plazas te gustaría reservar? *
           <input type="number" v-model="seats" name="seats" min="1" required/>
         </label>
 
         <div class="form__label">
-          ¿Desde donde te gustaría salir? *
+          ¿Desde dónde te gustaría salir? *
           <label class="radio">
             <input type="radio" name="origin" value="turia" v-model="origin">
             <div class="radio-label">Camp del Turia</div>

@@ -30,7 +30,7 @@ function handleSubmit () {
   >
     <input type="hidden" name="form-name" value="ask-song" />
     <label class="form__label">
-      Dinos quien eres *
+      Dinos quién eres *
       <input type="text" v-model="name" name="name" required/>
     </label>
 
