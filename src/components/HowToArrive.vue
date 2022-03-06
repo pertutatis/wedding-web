@@ -13,7 +13,7 @@ const store = useAppStore()
     :linkUrl="store.howToArrive.link_url"
     :linkText="store.howToArrive.link_text"
   >
-    <img class="map__image" src="../assets/mapa.webp" alt="Como llegar" width="596" height="514">
+    <img class="map__image" src="../assets/mapa.svg" alt="Como llegar" width="596" height="514">
   </Content>
 </template>
 
