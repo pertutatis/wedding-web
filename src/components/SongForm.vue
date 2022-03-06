@@ -42,8 +42,8 @@ function handleSubmit () {
     <input type="submit" value="Enviar" />
   </form>
 
-  <div class="form__response" v-if="formStatus == 'success'">Gracias por la sugerencia de canción {{ name }}. Nos guardamos la sugerencia de canción. Quien sabe si la pondremos y quien sabe si te tocará bailar con nosotros...</div>
-  <div class="form__response form__response--error" v-if="formStatus == 'error'">Vaya, actualmente el formulario no está funcionando, mejor contactanos por whatsapp.</div>
+  <div class="form__response" v-if="formStatus == 'success'">Gracias por la sugerencia de canción {{ name }}. Nos guardamos la sugerencia de canción. Quién sabe si la pondremos y quién sabe si te tocará bailar con nosotros...</div>
+  <div class="form__response form__response--error" v-if="formStatus == 'error'">Vaya, actualmente el formulario no está funcionando, mejor contáctanos por whatsapp.</div>
 </template>
 
 <style scoped lang="postcss">

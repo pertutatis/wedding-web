@@ -84,7 +84,7 @@ function close ():void {
       </form>
 
       <div class="form__response" v-if="formStatus == 'success'">Gracias por contactar {{ name }}. Nos pondremos en contacto contigo para confirmar.</div>
-      <div class="form__response form__response--error" v-if="formStatus == 'error'">Vaya, actualmente el formulario no está funcionando, mejor contactanos por whatsapp.</div>
+      <div class="form__response form__response--error" v-if="formStatus == 'error'">Vaya, actualmente el formulario no está funcionando, mejor contáctanos por whatsapp.</div>
     </div>
   </div>
 </template>
