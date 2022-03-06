@@ -103,6 +103,14 @@ export const useAppStore = defineStore({
       }
 
       return state.content.busPopup
+    },
+
+    bus(state) {
+      if (state.content === null || !state.content.bus) {
+        return false
+      }
+
+      return state.content.bus
     }
   },
 

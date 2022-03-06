@@ -36,7 +36,7 @@ function handleSubmit () {
 
     <label class="form__label">
       ¿Qué canción no puede faltar? *
-      <textarea cols="30" rows="5" v-model="comment" name="comment" required></textarea>
+      <textarea cols="30" rows="2" v-model="comment" name="comment" required></textarea>
     </label>
 
     <input type="submit" value="Enviar" />

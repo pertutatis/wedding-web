@@ -1,4 +1,4 @@
-export type ContentComponents = 'schedule' | 'how_to_arrive' | 'reservation' | 'contact' | 'bus_popup'
+export type ContentComponents = 'schedule' | 'how_to_arrive' | 'reservation' | 'contact' | 'bus_popup' | 'bus'
 
 export interface IContent {
     id: ContentComponents

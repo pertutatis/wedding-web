@@ -77,7 +77,7 @@ function close ():void {
 
         <label class="form__label">
           ¿Hay algo más al respecto que nos quieras comentar?
-          <textarea cols="30" rows="5" v-model="comment" name="comment" ></textarea>
+          <textarea cols="30" rows="2" v-model="comment" name="comment" ></textarea>
         </label>
 
         <input type="submit" value="Enviar" />
@@ -109,10 +109,14 @@ function close ():void {
   width: 100%;
   height: auto;
   max-width: 600px;
-  max-height: 90vh;
+  max-height: 75vh;
   padding: 32px;
   overflow-y: scroll;
   cursor: auto;
+
+  @media (min-width: 768px) {
+    max-height: 90vh;
+  }
 }
 
 .popup__close {

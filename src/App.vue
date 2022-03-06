@@ -3,6 +3,7 @@ import Header from "./components/Header.vue";
 import CountDown from "./components/CountDown.vue"
 import Schedule from "./components/Schedule.vue"
 import HowToArrive from "./components/HowToArrive.vue"
+import Bus from "./components/Bus.vue"
 import Reservation from "./components/Reservation.vue"
 import Contact from "./components/Contact.vue"
 import Disclaimer from "./components/Disclaimer.vue"
@@ -24,6 +25,7 @@ onBeforeMount(async () => {
   <CountDown />
   <Schedule />
   <HowToArrive />
+  <Bus />
   <Reservation />
   <Contact />
   <Disclaimer />

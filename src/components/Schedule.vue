@@ -1,12 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { useAppStore } from '../stores/app'
 import Card from "../ui/Card.vue"
-import BusForm from './BusForm.vue'
 
 const store = useAppStore()
-
-let popupIsOpened = ref<boolean>(false)
 </script>
 
 <template>
@@ -22,19 +18,11 @@ let popupIsOpened = ref<boolean>(false)
 
       <div class="schedule__column" v-if="store.schedule">
         <h3 class="schedule__title">{{ store.schedule.title }}</h3>
-        <p class="schedule__text">
-          <span style="white-space: pre-line;" v-html="store.schedule.text" />
-          <a :href="store.schedule.link_url" @click.prevent="popupIsOpened = true" v-text="store.schedule.link_text" />.
-        </p>
+        <p class="schedule__text">{{ store.schedule.text }}</p>
       </div>
       
     </div>
   </section>
-
-  <BusForm
-    v-show="popupIsOpened"
-    @close="popupIsOpened = false"
-  />
 </template>
 
 <style scoped lang="postcss">
@@ -92,11 +80,6 @@ let popupIsOpened = ref<boolean>(false)
 
   @media (min-width: 768px) {
     font-size: 18px;
-  }
-
-  a {
-    color: var(--primary-color);
-    text-decoration: underline;
   }
 }
 </style>

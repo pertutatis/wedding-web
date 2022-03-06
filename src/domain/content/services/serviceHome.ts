@@ -11,9 +11,11 @@ export interface IHomeContent {
   scheduleCocktail: ICard | null,
   scheduleParty: ICard | null,
   scheduleResopon: ICard | null,
-  busPopup: IContent | null,
   // How to arrive section
   howToArrive: IContent | null,
+  //Bus section
+  busPopup: IContent | null,
+  bus: IContent | null,
   // Music form
   reservation: IContent | null,
   // Contact section
@@ -24,7 +26,7 @@ export interface IHomeContent {
   bankAccount: IBankAccount | null,
 }
 
-const contentIds:Array<ContentComponents> = ['schedule', 'how_to_arrive', 'reservation', 'contact', 'bus_popup']
+const contentIds:Array<ContentComponents> = ['schedule', 'how_to_arrive', 'reservation', 'contact', 'bus_popup', 'bus']
 const cardIds:Array<cardComponents> = ['contact_ana', 'contact_diego', 'ceremonia', 'cocktail', 'fiesta', 'resopon']
 const bankIds:Array<bankComponents> = ['bank_account']
 
@@ -36,9 +38,11 @@ class ServiceHome {
       scheduleCocktail: this.getComponent(content, 'cocktail'),
       scheduleParty: this.getComponent(content, 'fiesta'),
       scheduleResopon: this.getComponent(content, 'resopon'),
-      busPopup: this.getComponent(content, 'bus_popup'),
       // How to arrive section
       howToArrive: this.getComponent(content, 'how_to_arrive'),
+      // Bus section
+      bus: this.getComponent(content, 'bus'),
+      busPopup: this.getComponent(content, 'bus_popup'),
       // Music form
       reservation: this.getComponent(content, 'reservation'),
       // Contact section
